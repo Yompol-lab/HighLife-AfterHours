@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2453267296	Play_Victory			\Default Work Unit\Play_Victory	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	913517059	IceCube	.cache\58\{58BFDFA5-F970-C318-C83D-8C686CD268E5}.wem		\Containers\Default Work Unit\IceCube		2446676
+

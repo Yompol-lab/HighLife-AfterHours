@@ -1,0 +1,47 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1647770721",
+    "Type": "User",
+    "GUID": "{7A355A9D-6A44-42B2-8C37-83FB7453B989}",
+    "Language": "SFX",
+    "Hash": "{F40EF604-55E7-1C93-29DB-B764B9203F9B}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SoundBank1",
+    "ShortName": "SoundBank1",
+    "Path": "SoundBank1.bnk",
+    "Media": [
+     {
+      "Id": "913517059",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "IceCube.wav",
+      "CachePath": "58/{58BFDFA5-F970-C318-C83D-8C686CD268E5}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2453267296",
+      "Name": "Play_Victory",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Victory",
+      "GUID": "{7AD8854C-94DB-493B-A81C-E4CE98475952}",
+      "DurationType": "OneShot",
+      "DurationMin": "13.8695",
+      "DurationMax": "13.8695",
+      "MediaRefs": [
+       {
+        "Id": "913517059"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{476191B8-A191-8D0C-D3A0-304509D6AA98}"
+ }
+}

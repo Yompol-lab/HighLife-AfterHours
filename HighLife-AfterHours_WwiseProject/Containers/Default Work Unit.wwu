@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{0B90C6EC-730E-464C-9075-9B953690393A}" SchemaVersion="133">
 	<Containers>
-		<WorkUnit Name="Default Work Unit" ID="{0B90C6EC-730E-464C-9075-9B953690393A}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{0B90C6EC-730E-464C-9075-9B953690393A}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="IceCube" ID="{B99AD339-15EF-45BC-B1C4-46AA6EFAD0DA}" ShortID="294768248">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-21</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C09D19AA-BE8B-40F8-80AB-DE06AD796C07}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4E86A9BB-B5F1-4A53-9F4E-91055D7775FD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="IceCube" ID="{293C248B-A412-41DC-9A70-C33E71B3172F}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="13.8695"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="13.8695"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>IceCube.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="913517059"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="IceCube" ID="{293C248B-A412-41DC-9A70-C33E71B3172F}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</Containers>
 </WwiseDocument>
