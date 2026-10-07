@@ -9,12 +9,18 @@ public class ArrastrarBotella : MonoBehaviour
     private Rigidbody rb;
     private Quaternion rotacionInicial;
 
+    private bool estaAgarrada = false;
+    private bool estaSirviendo = false; 
+
     [Header("Configuración para servir")]
     public string tagCopas = "Copa";
-    public float distanciaParaServir = 2f;
-    public float anguloInclinacion = 90f;
+    public float distanciaParaServir = 2.5f;
     public float anguloVolcadoMaximo = 180f;
-    public float velocidadRotacion = 8f;
+    public float velocidadRotacion = 6f;
+
+    [Header("Líquido")]
+    public ParticleSystem particulasLiquido;
+   
 
     void Start()
     {
@@ -25,6 +31,7 @@ public class ArrastrarBotella : MonoBehaviour
 
     void OnMouseDown()
     {
+        estaAgarrada = true;
         if (rb != null) rb.isKinematic = true;
 
         Vector2 pointerPos = Pointer.current.position.ReadValue();
@@ -48,36 +55,60 @@ public class ArrastrarBotella : MonoBehaviour
 
             if (distancia < distanciaParaServir)
             {
-            
                 float difX = transform.position.x - copaObjetivo.transform.position.x;
                 float direccion = (difX > 0) ? 1f : -1f;
 
-               
                 float factorCentrado = 1f - Mathf.Clamp01(Mathf.Abs(difX) / distanciaParaServir);
-
-                
-                float anguloObjetivo = Mathf.Lerp(anguloInclinacion, anguloVolcadoMaximo, factorCentrado);
+                float anguloObjetivo = Mathf.Lerp(0f, anguloVolcadoMaximo, factorCentrado);
 
                 Quaternion giroGlobal = Quaternion.AngleAxis(anguloObjetivo * direccion, Vector3.forward);
-                Quaternion rotacionInclinada = giroGlobal * rotacionInicial;
+                transform.rotation = Quaternion.Lerp(transform.rotation, giroGlobal * rotacionInicial, Time.deltaTime * velocidadRotacion);
 
-                transform.rotation = Quaternion.Lerp(transform.rotation, rotacionInclinada, Time.deltaTime * velocidadRotacion);
+              
+                if (factorCentrado > 0.3f)
+                {
+                    estaSirviendo = true;
+                }
+                else
+                {
+                    estaSirviendo = false;
+                }
             }
             else
             {
                 transform.rotation = Quaternion.Lerp(transform.rotation, rotacionInicial, Time.deltaTime * velocidadRotacion);
+                estaSirviendo = false;
             }
         }
         else
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, rotacionInicial, Time.deltaTime * velocidadRotacion);
+            estaSirviendo = false;
         }
     }
 
     void OnMouseUp()
     {
+        estaAgarrada = false;
+        estaSirviendo = false; 
         if (rb != null) rb.isKinematic = false;
         transform.rotation = rotacionInicial;
+    }
+
+    void Update()
+    {
+        if (particulasLiquido != null)
+        {
+            
+            if (estaAgarrada && estaSirviendo)
+            {
+                if (!particulasLiquido.isPlaying) particulasLiquido.Play();
+            }
+            else
+            {
+                if (particulasLiquido.isPlaying) particulasLiquido.Stop();
+            }
+        }
     }
 
     GameObject BuscarCopaMasCercana()
