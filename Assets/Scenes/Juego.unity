@@ -8571,9 +8571,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: a764bd92ae6c1e4409ee3feecdd4f0b9, type: 2}
     - target: {fileID: -7511558181221131132, guid: f8fde830ec333ca42929c1b05b60e69a, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b8287587becc6644b107eb1fce536cc, type: 2}
+    - target: {fileID: -7511558181221131132, guid: f8fde830ec333ca42929c1b05b60e69a, type: 3}
       propertyPath: 'm_Materials.Array.data[4]'
       value: 
-      objectReference: {fileID: -4974903464421335904, guid: 9ab11297125233648ba7ab0209227b5b, type: 3}
+      objectReference: {fileID: 2100000, guid: 4b8287587becc6644b107eb1fce536cc, type: 2}
+    - target: {fileID: -7511558181221131132, guid: f8fde830ec333ca42929c1b05b60e69a, type: 3}
+      propertyPath: 'm_Materials.Array.data[5]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b8287587becc6644b107eb1fce536cc, type: 2}
     - target: {fileID: 919132149155446097, guid: f8fde830ec333ca42929c1b05b60e69a, type: 3}
       propertyPath: m_Name
       value: Escalera
@@ -9942,9 +9950,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: a764bd92ae6c1e4409ee3feecdd4f0b9, type: 2}
     - target: {fileID: -7511558181221131132, guid: f8fde830ec333ca42929c1b05b60e69a, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b8287587becc6644b107eb1fce536cc, type: 2}
+    - target: {fileID: -7511558181221131132, guid: f8fde830ec333ca42929c1b05b60e69a, type: 3}
       propertyPath: 'm_Materials.Array.data[4]'
       value: 
-      objectReference: {fileID: -4974903464421335904, guid: 9ab11297125233648ba7ab0209227b5b, type: 3}
+      objectReference: {fileID: 2100000, guid: 4b8287587becc6644b107eb1fce536cc, type: 2}
+    - target: {fileID: -7511558181221131132, guid: f8fde830ec333ca42929c1b05b60e69a, type: 3}
+      propertyPath: 'm_Materials.Array.data[5]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b8287587becc6644b107eb1fce536cc, type: 2}
     - target: {fileID: 919132149155446097, guid: f8fde830ec333ca42929c1b05b60e69a, type: 3}
       propertyPath: m_Name
       value: Escalera
