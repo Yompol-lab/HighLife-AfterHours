@@ -18,23 +18,42 @@ Copyright (c) 2026 Audiokinetic Inc.
 
 public class DefaultHandles
 {
-	public static bool Hidden
-	{
-		get
-		{
-			var type = typeof(UnityEditor.Tools);
-			var field = type.GetField("s_Hidden",
-				System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
-			return (bool) field.GetValue(null);
-		}
-		set
-		{
-			var type = typeof(UnityEditor.Tools);
-			var field = type.GetField("s_Hidden",
-				System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
-			field.SetValue(null, value);
-		}
-	}
+    public static bool Hidden
+    {
+        get
+        {
+            // Envolvemos esto en un try-catch por si la propiedad s_Hidden ya no existe en Unity 6
+            try
+            {
+                var type = typeof(UnityEditor.Tools);
+                var field = type.GetField("s_Hidden",
+                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
+
+                if (field != null)
+                {
+                    return (bool)field.GetValue(null);
+                }
+            }
+            catch { }
+
+            return false; // Si falla, asumimos que no está oculto
+        }
+        set
+        {
+            try
+            {
+                var type = typeof(UnityEditor.Tools);
+                var field = type.GetField("s_Hidden",
+                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
+
+                if (field != null)
+                {
+                    field.SetValue(null, value);
+                }
+            }
+            catch { }
+        }
+    }
 }
 
 [UnityEditor.CanEditMultipleObjects]
