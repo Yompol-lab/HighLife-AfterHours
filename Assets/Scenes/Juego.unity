@@ -917,7 +917,13 @@ PrefabInstance:
     - {fileID: 7814174123716902753, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
     - {fileID: 5122622055869199096, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7449572162226119899, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1373742093}
+    - targetCorrespondingSourceObject: {fileID: 7449572162226119899, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1373742092}
   m_SourcePrefab: {fileID: -5645937942226959685, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
 --- !u!4 &10259259 stripped
 Transform:
@@ -2467,6 +2473,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54762807}
   m_Mesh: {fileID: 1230913769014067280, guid: 22729071afe4a9d4fa862b5d71dda289, type: 3}
+--- !u!1 &61051456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 61051457}
+  m_Layer: 0
+  m_Name: PuntoMonitor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &61051457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61051456}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.598805, z: -0, w: 0.80089486}
+  m_LocalPosition: {x: 5.375, y: 3.72, z: 33.338}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -73.569, z: 0}
 --- !u!1 &62149286
 GameObject:
   m_ObjectHideFlags: 0
@@ -15373,6 +15410,47 @@ Transform:
   - {fileID: 501321234}
   m_Father: {fileID: 957836690}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &471907436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7449572162226119899, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
+  m_PrefabInstance: {fileID: 1355303790}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &471907440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471907436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d0f23410e1d4249baf9888e016f189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteraccionTeclado
+  camaraAUsar: {fileID: 261869092}
+  puntoMonitor: {fileID: 829571473}
+  velocidadTransicion: 2
+--- !u!65 &471907441
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471907436}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0000007, y: 0.6983341, z: 0.09539611}
+  m_Center: {x: -0.000001909032, y: -0.000015257438, z: -0.045154}
 --- !u!1 &476038084
 GameObject:
   m_ObjectHideFlags: 0
@@ -27148,6 +27226,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2774220344278030320, guid: 67ab238e72d73a6448b73a40ad0e9633, type: 3}
   m_PrefabInstance: {fileID: 828161842}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &829571472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 829571473}
+  m_Layer: 0
+  m_Name: PuntoMonitor3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &829571473
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829571472}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.011635145, y: -0.00038701456, z: 0.0000045032757, w: -0.9999322}
+  m_LocalPosition: {x: 1.017, y: 3.72, z: 43.466}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 3.018, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -30915,6 +31024,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965047712}
   m_Mesh: {fileID: 3662896934235211358, guid: fffe33f2f5dbccf4cb2b91ab4a248a62, type: 3}
+--- !u!1 &965143980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965143981}
+  m_Layer: 0
+  m_Name: PuntoMonitor2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &965143981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965143980}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.011635145, y: -0.00038701456, z: 0.0000045032757, w: -0.9999322}
+  m_LocalPosition: {x: 5.975, y: 3.72, z: 43.462}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 3.018, z: 0}
 --- !u!1 &971433441
 GameObject:
   m_ObjectHideFlags: 0
@@ -36012,7 +36152,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107353463}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2437}
+  m_LocalPosition: {x: 0, y: 0, z: 4.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45236,6 +45376,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 7449572162226119899, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
+      propertyPath: m_Name
+      value: Teclado
+      objectReference: {fileID: 0}
     - target: {fileID: 7500118892814966383, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.133
@@ -45292,7 +45436,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6569145876919134859, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
       insertIndex: 3
       addedObject: {fileID: 1332831315}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7449572162226119899, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 471907441}
+    - targetCorrespondingSourceObject: {fileID: 7449572162226119899, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 471907440}
   m_SourcePrefab: {fileID: -5645937942226959685, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
 --- !u!4 &1355303791 stripped
 Transform:
@@ -46018,6 +46168,47 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373111117}
   m_Mesh: {fileID: -3084826631092878093, guid: 22729071afe4a9d4fa862b5d71dda289, type: 3}
+--- !u!1 &1373742088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7449572162226119899, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
+  m_PrefabInstance: {fileID: 10259258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1373742092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373742088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d0f23410e1d4249baf9888e016f189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteraccionTeclado
+  camaraAUsar: {fileID: 261869092}
+  puntoMonitor: {fileID: 965143981}
+  velocidadTransicion: 2
+--- !u!65 &1373742093
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373742088}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0000007, y: 0.6983341, z: 0.09539611}
+  m_Center: {x: -0.000001909032, y: 0.0000000013517546, z: -0.045154955}
 --- !u!1 &1380219245
 GameObject:
   m_ObjectHideFlags: 0
@@ -52325,7 +52516,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1577930455
 RectTransform:
   m_ObjectHideFlags: 0
@@ -59310,6 +59501,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pantalla1
       objectReference: {fileID: 0}
+    - target: {fileID: 7449572162226119899, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
+      propertyPath: m_Name
+      value: Teclado
+      objectReference: {fileID: 0}
     - target: {fileID: 7500118892814966383, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.133
@@ -59364,13 +59559,60 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7822059987918736359, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 846695980}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7449572162226119899, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1752706540}
+    - targetCorrespondingSourceObject: {fileID: 7449572162226119899, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1752706539}
   m_SourcePrefab: {fileID: -5645937942226959685, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
 --- !u!4 &1752706537 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2774220344278030320, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
   m_PrefabInstance: {fileID: 1752706536}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1752706538 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7449572162226119899, guid: 5a0004e9b246a1a47bb572ada0732fa2, type: 3}
+  m_PrefabInstance: {fileID: 1752706536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1752706539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752706538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d0f23410e1d4249baf9888e016f189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteraccionTeclado
+  camaraAUsar: {fileID: 261869092}
+  puntoMonitor: {fileID: 61051457}
+  velocidadTransicion: 2
+--- !u!65 &1752706540
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752706538}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0000007, y: 0.69833404, z: 0.09539612}
+  m_Center: {x: -0.000007631078, y: 0.0000038160492, z: -0.045155916}
 --- !u!1 &1754626040
 GameObject:
   m_ObjectHideFlags: 0
@@ -72306,3 +72548,6 @@ SceneRoots:
   - {fileID: 1268383869}
   - {fileID: 210620084}
   - {fileID: 1348767499}
+  - {fileID: 61051457}
+  - {fileID: 965143981}
+  - {fileID: 829571473}
