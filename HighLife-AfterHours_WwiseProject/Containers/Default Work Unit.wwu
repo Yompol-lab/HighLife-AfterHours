@@ -67,7 +67,114 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="Sabale" ID="{713BCEB2-37CF-4951-9E52-07E2670E0ECE}" ShortID="729709052">
+					<PropertyList>
+						<Property Name="3DPosition" Type="int16" Value="2"/>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-21</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<Custom>
+								<Attenuation Name="Attenuation (Custom)" ID="{12ECD2CF-7410-42BC-8050-3F548A4D6E46}" ShortID="840506826">
+									<CurveUsageInfoList>
+										<VolumeDryUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+												<Curve Name="VolumeDry" ID="{20D79FEF-2175-4EDC-A310-B7265F170CC4}">
+													<PropertyList>
+														<Property Name="Flags" Type="int32" Value="3"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>0</XPos>
+															<YPos>0</YPos>
+															<Flags>5</Flags>
+														</Point>
+														<Point>
+															<XPos>100</XPos>
+															<YPos>-200</YPos>
+															<Flags>37</Flags>
+														</Point>
+													</PointList>
+												</Curve>
+											</CurveUsageInfo>
+										</VolumeDryUsage>
+										<VolumeWetGameUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+										</VolumeWetGameUsage>
+										<VolumeWetUserUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+										</VolumeWetUserUsage>
+										<LowPassFilterUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</LowPassFilterUsage>
+										<HighPassFilterUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</HighPassFilterUsage>
+										<DualShelfUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</DualShelfUsage>
+										<SpreadUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</SpreadUsage>
+										<FocusUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</FocusUsage>
+										<ObstructionVolumeUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</ObstructionVolumeUsage>
+										<ObstructionLPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</ObstructionLPFUsage>
+										<ObstructionHPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</ObstructionHPFUsage>
+										<ObstructionDSFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</ObstructionDSFUsage>
+										<OcclusionVolumeUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</OcclusionVolumeUsage>
+										<OcclusionLPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</OcclusionLPFUsage>
+										<OcclusionHPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</OcclusionHPFUsage>
+										<OcclusionDSFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</OcclusionDSFUsage>
+										<DiffractionVolumeUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</DiffractionVolumeUsage>
+										<DiffractionLPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</DiffractionLPFUsage>
+										<DiffractionHPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</DiffractionHPFUsage>
+										<DiffractionDSFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</DiffractionDSFUsage>
+										<TransmissionVolumeUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</TransmissionVolumeUsage>
+										<TransmissionLPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</TransmissionLPFUsage>
+										<TransmissionHPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</TransmissionHPFUsage>
+										<TransmissionDSFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</TransmissionDSFUsage>
+									</CurveUsageInfoList>
+								</Attenuation>
+							</Custom>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C09D19AA-BE8B-40F8-80AB-DE06AD796C07}"/>
 						</Reference>
@@ -84,11 +191,128 @@
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
+					<PositioningInfo>
+						<Position Name="" ID="{761E18A0-4632-43B8-8502-5328A8A3238A}">
+							<PropertyList>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="PlayMechanismTransitionTime" Type="Real64" Value="10"/>
+							</PropertyList>
+							<ChildrenList>
+								<Path2D Name="Sabale_Path" ID="{95896CCA-5620-48CC-9D91-1CD1DDD503D6}">
+									<PointList>
+										<Point>
+											<XPos>0</XPos>
+											<YPos>21.75141</YPos>
+											<Flags>12</Flags>
+											<Time>0</Time>
+										</Point>
+									</PointList>
+								</Path2D>
+								<Path2D Name="Sabale_Path_01" ID="{7C7226E4-79A9-4003-AE10-127F0CC52BAA}">
+									<PointList>
+										<Point>
+											<XPos>-14.72081</XPos>
+											<YPos>21.18644</YPos>
+											<Flags>12</Flags>
+											<Time>0</Time>
+										</Point>
+									</PointList>
+								</Path2D>
+								<Path2D Name="Sabale_Path_02" ID="{2AF806AE-EFBA-4A96-B700-1A760A555405}">
+									<PointList>
+										<Point>
+											<XPos>-21.82741</XPos>
+											<YPos>7.06215</YPos>
+											<Flags>12</Flags>
+											<Time>0</Time>
+										</Point>
+									</PointList>
+								</Path2D>
+								<Path2D Name="Sabale_Path_03" ID="{FC5DB0BA-4A79-4DD7-8E6C-9E3406DCF5F3}">
+									<PointList>
+										<Point>
+											<XPos>-17.7665</XPos>
+											<YPos>1.9774</YPos>
+											<Flags>12</Flags>
+											<Time>0</Time>
+										</Point>
+									</PointList>
+								</Path2D>
+								<Path2D Name="Sabale_Path_04" ID="{0EC87AD4-79F1-4288-BE91-52D406F3E349}">
+									<PointList>
+										<Point>
+											<XPos>-18.27411</XPos>
+											<YPos>-12.14689</YPos>
+											<Flags>12</Flags>
+											<Time>0</Time>
+										</Point>
+									</PointList>
+								</Path2D>
+								<Path2D Name="Sabale_Path_05" ID="{4837AF9F-BEB8-45DD-8DA4-3CF5D811D47D}">
+									<PointList>
+										<Point>
+											<XPos>0</XPos>
+											<YPos>-11.01695</YPos>
+											<Flags>12</Flags>
+											<Time>0</Time>
+										</Point>
+									</PointList>
+								</Path2D>
+								<Path2D Name="Sabale_Path_06" ID="{23694B7D-C3FC-4927-83E7-4B2D665FC710}">
+									<PointList>
+										<Point>
+											<XPos>19.28934</XPos>
+											<YPos>-11.58192</YPos>
+											<Flags>12</Flags>
+											<Time>0</Time>
+										</Point>
+									</PointList>
+								</Path2D>
+								<Path2D Name="Sabale_Path_07" ID="{8B767F79-F7FB-4E7D-837F-105C5D2F9F26}">
+									<PointList>
+										<Point>
+											<XPos>23.85787</XPos>
+											<YPos>1.41243</YPos>
+											<Flags>12</Flags>
+											<Time>0</Time>
+										</Point>
+									</PointList>
+								</Path2D>
+								<Path2D Name="Sabale_Path_08" ID="{AD892574-182A-4139-94DE-DC5680390643}">
+									<PointList>
+										<Point>
+											<XPos>21.82741</XPos>
+											<YPos>10.45198</YPos>
+											<Flags>12</Flags>
+											<Time>0</Time>
+										</Point>
+									</PointList>
+								</Path2D>
+								<Path2D Name="Sabale_Path_09" ID="{6BFD53AD-D52D-4D70-87A3-C14437227AD4}">
+									<PointList>
+										<Point>
+											<XPos>13.70558</XPos>
+											<YPos>17.23164</YPos>
+											<Flags>12</Flags>
+											<Time>0</Time>
+										</Point>
+									</PointList>
+								</Path2D>
+							</ChildrenList>
+						</Position>
+					</PositioningInfo>
 					<ActiveSourceList>
 						<ActiveSource Name="Sabale" ID="{15D4B028-3593-419C-AE41-EAE1951B50E1}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="Palmeras" ID="{A9C99FF0-3E47-4770-A335-D16DCF87EF1F}" ShortID="426994317">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-18</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C09D19AA-BE8B-40F8-80AB-DE06AD796C07}"/>
