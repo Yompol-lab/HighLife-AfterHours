@@ -3,9 +3,13 @@ using UnityEngine.InputSystem;
 
 public class CamaraPrimeraPersona : MonoBehaviour
 {
+    [Header("Joysticks en Pantalla")]
+    public Joystick joystickMovimiento;
+    public Joystick joystickVista;      
+
     [Header("Configuración de Movimiento")]
     public float velocidadCaminar = 4f;
-    public float sensibilidadGiro = 0.5f;
+    public float sensibilidadGiro = 2f;
 
     private float rotacionX = 0f;
     private float rotacionY = 0f;
@@ -18,39 +22,49 @@ public class CamaraPrimeraPersona : MonoBehaviour
 
     void Update()
     {
-        MirarConPantalla();
+        MirarConJoystick();
         Caminar();
     }
 
-    void MirarConPantalla()
+    void MirarConJoystick()
     {
-        
-        if (Pointer.current == null) return;
+        float deltaX = 0f;
+        float deltaY = 0f;
 
         
-        if (Pointer.current.press.isPressed)
+        if (joystickVista != null)
         {
-            Vector2 delta = Pointer.current.delta.ReadValue() * sensibilidadGiro;
-
-            rotacionY += delta.x;
-            rotacionX -= delta.y;
-
-            rotacionX = Mathf.Clamp(rotacionX, -85f, 85f);
-            transform.localRotation = Quaternion.Euler(rotacionX, rotacionY, 0f);
+            deltaX = joystickVista.Horizontal * sensibilidadGiro;
+            deltaY = joystickVista.Vertical * sensibilidadGiro;
         }
+
+        rotacionY += deltaX;
+        rotacionX -= deltaY;
+
+        rotacionX = Mathf.Clamp(rotacionX, -85f, 85f);
+        transform.localRotation = Quaternion.Euler(rotacionX, rotacionY, 0f);
     }
 
     void Caminar()
     {
-        if (Keyboard.current == null) return;
-
         float moverX = 0f;
         float moverZ = 0f;
 
-        if (Keyboard.current.wKey.isPressed) moverZ = 1f;
-        if (Keyboard.current.sKey.isPressed) moverZ = -1f;
-        if (Keyboard.current.aKey.isPressed) moverX = -1f;
-        if (Keyboard.current.dKey.isPressed) moverX = 1f;
+        
+        if (Keyboard.current != null)
+        {
+            if (Keyboard.current.wKey.isPressed) moverZ = 1f;
+            if (Keyboard.current.sKey.isPressed) moverZ = -1f;
+            if (Keyboard.current.aKey.isPressed) moverX = -1f;
+            if (Keyboard.current.dKey.isPressed) moverX = 1f;
+        }
+
+        
+        if (joystickMovimiento != null)
+        {
+            if (Mathf.Abs(joystickMovimiento.Horizontal) > 0.05f) moverX = joystickMovimiento.Horizontal;
+            if (Mathf.Abs(joystickMovimiento.Vertical) > 0.05f) moverZ = joystickMovimiento.Vertical;
+        }
 
         Vector3 adelante = transform.forward;
         adelante.y = 0f;

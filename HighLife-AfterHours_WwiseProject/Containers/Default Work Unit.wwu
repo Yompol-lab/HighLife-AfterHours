@@ -199,6 +199,9 @@
 							</PropertyList>
 							<ChildrenList>
 								<Path2D Name="Sabale_Path" ID="{95896CCA-5620-48CC-9D91-1CD1DDD503D6}">
+									<PropertyList>
+										<Property Name="Duration" Type="Uint32" Value="20000"/>
+									</PropertyList>
 									<PointList>
 										<Point>
 											<XPos>0</XPos>
@@ -206,95 +209,77 @@
 											<Flags>12</Flags>
 											<Time>0</Time>
 										</Point>
-									</PointList>
-								</Path2D>
-								<Path2D Name="Sabale_Path_01" ID="{7C7226E4-79A9-4003-AE10-127F0CC52BAA}">
-									<PointList>
 										<Point>
-											<XPos>-14.72081</XPos>
-											<YPos>21.18644</YPos>
-											<Flags>12</Flags>
-											<Time>0</Time>
+											<XPos>-15.2284263959391</XPos>
+											<YPos>16.3841807909605</YPos>
+											<Flags>0</Flags>
+											<Time>1666</Time>
 										</Point>
-									</PointList>
-								</Path2D>
-								<Path2D Name="Sabale_Path_02" ID="{2AF806AE-EFBA-4A96-B700-1A760A555405}">
-									<PointList>
 										<Point>
-											<XPos>-21.82741</XPos>
-											<YPos>7.06215</YPos>
-											<Flags>12</Flags>
-											<Time>0</Time>
+											<XPos>-25.8883248730965</XPos>
+											<YPos>0.564971751412429</YPos>
+											<Flags>0</Flags>
+											<Time>3333</Time>
 										</Point>
-									</PointList>
-								</Path2D>
-								<Path2D Name="Sabale_Path_03" ID="{FC5DB0BA-4A79-4DD7-8E6C-9E3406DCF5F3}">
-									<PointList>
 										<Point>
-											<XPos>-17.7665</XPos>
-											<YPos>1.9774</YPos>
-											<Flags>12</Flags>
-											<Time>0</Time>
+											<XPos>-25.38071</XPos>
+											<YPos>-13.55932</YPos>
+											<Flags>0</Flags>
+											<Time>5000</Time>
 										</Point>
-									</PointList>
-								</Path2D>
-								<Path2D Name="Sabale_Path_04" ID="{0EC87AD4-79F1-4288-BE91-52D406F3E349}">
-									<PointList>
 										<Point>
-											<XPos>-18.27411</XPos>
-											<YPos>-12.14689</YPos>
-											<Flags>12</Flags>
-											<Time>0</Time>
+											<XPos>-16.24365</XPos>
+											<YPos>-26.55367</YPos>
+											<Flags>0</Flags>
+											<Time>6666</Time>
 										</Point>
-									</PointList>
-								</Path2D>
-								<Path2D Name="Sabale_Path_05" ID="{4837AF9F-BEB8-45DD-8DA4-3CF5D811D47D}">
-									<PointList>
 										<Point>
-											<XPos>0</XPos>
-											<YPos>-11.01695</YPos>
-											<Flags>12</Flags>
-											<Time>0</Time>
+											<XPos>-6.5989847715736</XPos>
+											<YPos>-31.0734463276836</YPos>
+											<Flags>0</Flags>
+											<Time>8333</Time>
 										</Point>
-									</PointList>
-								</Path2D>
-								<Path2D Name="Sabale_Path_06" ID="{23694B7D-C3FC-4927-83E7-4B2D665FC710}">
-									<PointList>
 										<Point>
-											<XPos>19.28934</XPos>
-											<YPos>-11.58192</YPos>
-											<Flags>12</Flags>
-											<Time>0</Time>
+											<XPos>6.59898477157361</XPos>
+											<YPos>-31.6384180790961</YPos>
+											<Flags>0</Flags>
+											<Time>10000</Time>
 										</Point>
-									</PointList>
-								</Path2D>
-								<Path2D Name="Sabale_Path_07" ID="{8B767F79-F7FB-4E7D-837F-105C5D2F9F26}">
-									<PointList>
 										<Point>
-											<XPos>23.85787</XPos>
-											<YPos>1.41243</YPos>
-											<Flags>12</Flags>
-											<Time>0</Time>
+											<XPos>18.2741116751269</XPos>
+											<YPos>-25.9887005649718</YPos>
+											<Flags>0</Flags>
+											<Time>11666</Time>
 										</Point>
-									</PointList>
-								</Path2D>
-								<Path2D Name="Sabale_Path_08" ID="{AD892574-182A-4139-94DE-DC5680390643}">
-									<PointList>
 										<Point>
-											<XPos>21.82741</XPos>
-											<YPos>10.45198</YPos>
-											<Flags>12</Flags>
-											<Time>0</Time>
+											<XPos>25.3807106598985</XPos>
+											<YPos>-16.9491525423729</YPos>
+											<Flags>0</Flags>
+											<Time>13333</Time>
 										</Point>
-									</PointList>
-								</Path2D>
-								<Path2D Name="Sabale_Path_09" ID="{6BFD53AD-D52D-4D70-87A3-C14437227AD4}">
-									<PointList>
 										<Point>
-											<XPos>13.70558</XPos>
-											<YPos>17.23164</YPos>
-											<Flags>12</Flags>
-											<Time>0</Time>
+											<XPos>26.9035532994924</XPos>
+											<YPos>-4.51977401129943</YPos>
+											<Flags>0</Flags>
+											<Time>14999</Time>
+										</Point>
+										<Point>
+											<XPos>23.8578680203046</XPos>
+											<YPos>6.77966101694915</YPos>
+											<Flags>0</Flags>
+											<Time>16666</Time>
+										</Point>
+										<Point>
+											<XPos>14.2131979695431</XPos>
+											<YPos>15.819209039548</YPos>
+											<Flags>0</Flags>
+											<Time>18333</Time>
+										</Point>
+										<Point>
+											<XPos>0.50761</XPos>
+											<YPos>21.46893</YPos>
+											<Flags>0</Flags>
+											<Time>20000</Time>
 										</Point>
 									</PointList>
 								</Path2D>
