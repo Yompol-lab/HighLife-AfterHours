@@ -7709,7 +7709,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207761792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7717,8 +7717,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -266.3, y: 256}
-  m_SizeDelta: {x: 41.95, y: 30}
+  m_AnchoredPosition: {x: -0.4, y: -0}
+  m_SizeDelta: {x: 600.85, y: 580.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &207761794
 MonoBehaviour:
@@ -7766,7 +7766,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1378143981}
         m_TargetAssemblyTypeName: MenuTragos, Assembly-CSharp
-        m_MethodName: AbrirCategoriasTragos
+        m_MethodName: AbrirMenuPrincipal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18067,7 +18067,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &522989070
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48640,7 +48640,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 261869092}
+  m_Camera: {fileID: 330585545}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
