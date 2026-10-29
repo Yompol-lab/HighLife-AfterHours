@@ -14,6 +14,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Menu" ID="{AE5A44CC-B930-4A31-9DB9-0E86D3996EE3}">
+					<ChildrenList>
+						<Action Name="" ID="{56CC58EB-B959-48DF-B8DF-50E3D38A11B2}" ShortID="265343964">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Blade" ID="{74D33378-E8D2-4582-A2BB-E69B665C3E11}" WorkUnitID="{0B90C6EC-730E-464C-9075-9B953690393A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Random" ID="{0D9D707D-FA4A-4BA8-9755-BA4ABA961D86}">
+					<ChildrenList>
+						<Action Name="" ID="{C86D3A1B-8FF2-4DE3-B398-CAED130BC4B9}" ShortID="1022982729">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RandomContainer" ID="{85C2A764-63F0-4C26-B1A7-B11F1A716E07}" WorkUnitID="{85F78E3C-CDE1-494F-9CD1-E458423E9E04}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

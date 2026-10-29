@@ -1,6 +1,14 @@
 Event	ID	Name			Wwise Object Path	Notes
+	1184772011	Play_Random			\Default Work Unit\Play_Random	
+	1278378707	Play_Menu			\Default Work Unit\Play_Menu	
 	2453267296	Play_Victory			\Default Work Unit\Play_Victory	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	96270976	Farsante	.cache\EE\{EE622725-765D-434F-F198-3BE0129B68B5}.wem		\Containers\RandomContainer\RandomUnit\RandomContainer\Farsante		40751200
+	346700196	Palmeras	.cache\40\{40E6E27A-65A5-C26F-9013-D0789FDDC189}.wem		\Containers\RandomContainer\RandomUnit\RandomContainer\Palmeras		36008032
+	417845960	Blade	.cache\2C\{2CE1E45D-93A2-8369-0905-0A1DD8DC0676}.wem		\Containers\Default Work Unit\Blade		110198880
+	855277479	TeBote	.cache\25\{2542A849-394D-D562-9D07-F13AA126B511}.wem		\Containers\RandomContainer\RandomUnit\RandomContainer\TeBote		74518980
 	913517059	IceCube	.cache\58\{58BFDFA5-F970-C318-C83D-8C686CD268E5}.wem		\Containers\Default Work Unit\IceCube		2446676
+	965049703	Sabale	.cache\C9\{C9A10313-7794-C7B5-8DF2-75F21AD3DF82}.wem		\Containers\RandomContainer\RandomUnit\RandomContainer\Sabale		30421088
+	994256606	NoLoSoñe	.cache\A0\{A0B2FB36-54BD-1849-6854-146629AE695B}.wem		\Containers\RandomContainer\RandomUnit\RandomContainer\NoLoSoñe		60112992
 

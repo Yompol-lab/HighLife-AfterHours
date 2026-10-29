@@ -13,6 +13,8 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_MENU = 1278378707U;
+        static const AkUniqueID PLAY_RANDOM = 1184772011U;
         static const AkUniqueID PLAY_VICTORY = 2453267296U;
     } // namespace EVENTS
 

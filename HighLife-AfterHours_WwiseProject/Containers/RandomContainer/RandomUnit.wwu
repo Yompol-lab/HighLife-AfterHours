@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{85F78E3C-CDE1-494F-9CD1-E458423E9E04}" SchemaVersion="133">
+	<Containers>
+		<WorkUnit Name="RandomUnit" ID="{85F78E3C-CDE1-494F-9CD1-E458423E9E04}" PersistMode="Standalone">
+			<ChildrenList>
+				<RandomSequenceContainer Name="RandomContainer" ID="{85C2A764-63F0-4C26-B1A7-B11F1A716E07}" ShortID="975002700">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C09D19AA-BE8B-40F8-80AB-DE06AD796C07}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4E86A9BB-B5F1-4A53-9F4E-91055D7775FD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Farsante" ID="{B36304E1-C8D3-4D85-8A1B-B2524D0236E5}" ShortID="195272138">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C09D19AA-BE8B-40F8-80AB-DE06AD796C07}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4E86A9BB-B5F1-4A53-9F4E-91055D7775FD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Farsante" ID="{E6EADB2B-8A96-4486-8E93-66CFC3E5A945}">
+									<Language>SFX</Language>
+									<AudioFile>Farsante.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="96270976"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Farsante" ID="{E6EADB2B-8A96-4486-8E93-66CFC3E5A945}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="NoLoSoñe" ID="{D26E4585-E91E-492E-8027-C35F84DEACC4}" ShortID="568877521">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-13</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C09D19AA-BE8B-40F8-80AB-DE06AD796C07}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4E86A9BB-B5F1-4A53-9F4E-91055D7775FD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="NoLoSoñe" ID="{CAA99D0B-3865-4084-A80A-F524FE9A0DFC}">
+									<Language>SFX</Language>
+									<AudioFile>NoLoSoñe.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="994256606"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="NoLoSoñe" ID="{CAA99D0B-3865-4084-A80A-F524FE9A0DFC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Palmeras" ID="{A9C99FF0-3E47-4770-A335-D16DCF87EF1F}" ShortID="426994317">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-18</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C09D19AA-BE8B-40F8-80AB-DE06AD796C07}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4E86A9BB-B5F1-4A53-9F4E-91055D7775FD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Palmeras" ID="{6FB3B069-3997-492C-9C2C-6AB48D038886}">
+									<Language>SFX</Language>
+									<AudioFile>Palmeras.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="346700196"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Palmeras" ID="{6FB3B069-3997-492C-9C2C-6AB48D038886}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Sabale" ID="{713BCEB2-37CF-4951-9E52-07E2670E0ECE}" ShortID="729709052">
+							<PropertyList>
+								<Property Name="3DPosition" Type="int16" Value="2"/>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-21</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<Custom>
+										<Attenuation Name="Attenuation (Custom)" ID="{12ECD2CF-7410-42BC-8050-3F548A4D6E46}" ShortID="840506826">
+											<CurveUsageInfoList>
+												<VolumeDryUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+														<Curve Name="VolumeDry" ID="{20D79FEF-2175-4EDC-A310-B7265F170CC4}">
+															<PropertyList>
+																<Property Name="Flags" Type="int32" Value="3"/>
+															</PropertyList>
+															<PointList>
+																<Point>
+																	<XPos>0</XPos>
+																	<YPos>0</YPos>
+																	<Flags>5</Flags>
+																</Point>
+																<Point>
+																	<XPos>100</XPos>
+																	<YPos>-200</YPos>
+																	<Flags>37</Flags>
+																</Point>
+															</PointList>
+														</Curve>
+													</CurveUsageInfo>
+												</VolumeDryUsage>
+												<VolumeWetGameUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetGameUsage>
+												<VolumeWetUserUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetUserUsage>
+												<LowPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</LowPassFilterUsage>
+												<HighPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</HighPassFilterUsage>
+												<DualShelfUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</DualShelfUsage>
+												<SpreadUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</SpreadUsage>
+												<FocusUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</FocusUsage>
+												<ObstructionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</ObstructionVolumeUsage>
+												<ObstructionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</ObstructionLPFUsage>
+												<ObstructionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</ObstructionHPFUsage>
+												<ObstructionDSFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</ObstructionDSFUsage>
+												<OcclusionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</OcclusionVolumeUsage>
+												<OcclusionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</OcclusionLPFUsage>
+												<OcclusionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</OcclusionHPFUsage>
+												<OcclusionDSFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</OcclusionDSFUsage>
+												<DiffractionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</DiffractionVolumeUsage>
+												<DiffractionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</DiffractionLPFUsage>
+												<DiffractionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</DiffractionHPFUsage>
+												<DiffractionDSFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</DiffractionDSFUsage>
+												<TransmissionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</TransmissionVolumeUsage>
+												<TransmissionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</TransmissionLPFUsage>
+												<TransmissionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</TransmissionHPFUsage>
+												<TransmissionDSFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</TransmissionDSFUsage>
+											</CurveUsageInfoList>
+										</Attenuation>
+									</Custom>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C09D19AA-BE8B-40F8-80AB-DE06AD796C07}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4E86A9BB-B5F1-4A53-9F4E-91055D7775FD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sabale" ID="{15D4B028-3593-419C-AE41-EAE1951B50E1}">
+									<Language>SFX</Language>
+									<AudioFile>Sabale.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="965049703"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<PositioningInfo>
+								<Position Name="" ID="{761E18A0-4632-43B8-8502-5328A8A3238A}">
+									<PropertyList>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="PlayMechanismTransitionTime" Type="Real64" Value="10"/>
+									</PropertyList>
+									<ChildrenList>
+										<Path2D Name="Sabale_Path" ID="{95896CCA-5620-48CC-9D91-1CD1DDD503D6}">
+											<PropertyList>
+												<Property Name="Duration" Type="Uint32" Value="20000"/>
+											</PropertyList>
+											<PointList>
+												<Point>
+													<XPos>0</XPos>
+													<YPos>21.75141</YPos>
+													<Flags>12</Flags>
+													<Time>0</Time>
+												</Point>
+												<Point>
+													<XPos>-15.2284263959391</XPos>
+													<YPos>16.3841807909605</YPos>
+													<Flags>0</Flags>
+													<Time>1666</Time>
+												</Point>
+												<Point>
+													<XPos>-25.8883248730965</XPos>
+													<YPos>0.564971751412429</YPos>
+													<Flags>0</Flags>
+													<Time>3333</Time>
+												</Point>
+												<Point>
+													<XPos>-25.38071</XPos>
+													<YPos>-13.55932</YPos>
+													<Flags>0</Flags>
+													<Time>5000</Time>
+												</Point>
+												<Point>
+													<XPos>-16.24365</XPos>
+													<YPos>-26.55367</YPos>
+													<Flags>0</Flags>
+													<Time>6666</Time>
+												</Point>
+												<Point>
+													<XPos>-6.5989847715736</XPos>
+													<YPos>-31.0734463276836</YPos>
+													<Flags>0</Flags>
+													<Time>8333</Time>
+												</Point>
+												<Point>
+													<XPos>6.59898477157361</XPos>
+													<YPos>-31.6384180790961</YPos>
+													<Flags>0</Flags>
+													<Time>10000</Time>
+												</Point>
+												<Point>
+													<XPos>18.2741116751269</XPos>
+													<YPos>-25.9887005649718</YPos>
+													<Flags>0</Flags>
+													<Time>11666</Time>
+												</Point>
+												<Point>
+													<XPos>25.3807106598985</XPos>
+													<YPos>-16.9491525423729</YPos>
+													<Flags>0</Flags>
+													<Time>13333</Time>
+												</Point>
+												<Point>
+													<XPos>26.9035532994924</XPos>
+													<YPos>-4.51977401129943</YPos>
+													<Flags>0</Flags>
+													<Time>14999</Time>
+												</Point>
+												<Point>
+													<XPos>23.8578680203046</XPos>
+													<YPos>6.77966101694915</YPos>
+													<Flags>0</Flags>
+													<Time>16666</Time>
+												</Point>
+												<Point>
+													<XPos>14.2131979695431</XPos>
+													<YPos>15.819209039548</YPos>
+													<Flags>0</Flags>
+													<Time>18333</Time>
+												</Point>
+												<Point>
+													<XPos>0.50761</XPos>
+													<YPos>21.46893</YPos>
+													<Flags>0</Flags>
+													<Time>20000</Time>
+												</Point>
+											</PointList>
+										</Path2D>
+									</ChildrenList>
+								</Position>
+							</PositioningInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="Sabale" ID="{15D4B028-3593-419C-AE41-EAE1951B50E1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="TeBote" ID="{5E1186D9-A8F4-49D8-B50C-FBB3B8460C4D}" ShortID="690483575">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C09D19AA-BE8B-40F8-80AB-DE06AD796C07}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{4E86A9BB-B5F1-4A53-9F4E-91055D7775FD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="TeBote" ID="{B41A78FF-5FA9-4584-AF1D-7C40137C3007}">
+									<Language>SFX</Language>
+									<AudioFile>TeBote.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="855277479"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="TeBote" ID="{B41A78FF-5FA9-4584-AF1D-7C40137C3007}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</Containers>
+</WwiseDocument>

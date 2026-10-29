@@ -10,11 +10,43 @@
     "Type": "User",
     "GUID": "{7A355A9D-6A44-42B2-8C37-83FB7453B989}",
     "Language": "SFX",
-    "Hash": "{F40EF604-55E7-1C93-29DB-B764B9203F9B}",
+    "Hash": "{41924B49-5A41-31A9-586E-15AF8294DFC8}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SoundBank1",
     "ShortName": "SoundBank1",
     "Path": "SoundBank1.bnk",
     "Media": [
+     {
+      "Id": "96270976",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Farsante.wav",
+      "CachePath": "EE/{EE622725-765D-434F-F198-3BE0129B68B5}.wem"
+     },
+     {
+      "Id": "346700196",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Palmeras.wav",
+      "CachePath": "40/{40E6E27A-65A5-C26F-9013-D0789FDDC189}.wem"
+     },
+     {
+      "Id": "417845960",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Blade.wav",
+      "CachePath": "2C/{2CE1E45D-93A2-8369-0905-0A1DD8DC0676}.wem"
+     },
+     {
+      "Id": "855277479",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "TeBote.wav",
+      "CachePath": "25/{2542A849-394D-D562-9D07-F13AA126B511}.wem"
+     },
      {
       "Id": "913517059",
       "Language": "SFX",
@@ -22,9 +54,65 @@
       "Location": "Memory",
       "ShortName": "IceCube.wav",
       "CachePath": "58/{58BFDFA5-F970-C318-C83D-8C686CD268E5}.wem"
+     },
+     {
+      "Id": "965049703",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sabale.wav",
+      "CachePath": "C9/{C9A10313-7794-C7B5-8DF2-75F21AD3DF82}.wem"
+     },
+     {
+      "Id": "994256606",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "NoLoSoñe.wav",
+      "CachePath": "A0/{A0B2FB36-54BD-1849-6854-146629AE695B}.wem"
      }
     ],
     "Events": [
+     {
+      "Id": "1278378707",
+      "Name": "Play_Menu",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Menu",
+      "GUID": "{AE5A44CC-B930-4A31-9DB9-0E86D3996EE3}",
+      "DurationType": "OneShot",
+      "DurationMin": "624.70966",
+      "DurationMax": "624.70966",
+      "MediaRefs": [
+       {
+        "Id": "417845960"
+       }
+      ]
+     },
+     {
+      "Id": "1184772011",
+      "Name": "Play_Random",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Random",
+      "GUID": "{0D9D707D-FA4A-4BA8-9755-BA4ABA961D86}",
+      "DurationType": "OneShot",
+      "DurationMin": "172.4546",
+      "DurationMax": "422.44266",
+      "MediaRefs": [
+       {
+        "Id": "96270976"
+       },
+       {
+        "Id": "346700196"
+       },
+       {
+        "Id": "855277479"
+       },
+       {
+        "Id": "965049703"
+       },
+       {
+        "Id": "994256606"
+       }
+      ]
+     },
      {
       "Id": "2453267296",
       "Name": "Play_Victory",
@@ -42,6 +130,6 @@
     ]
    }
   ],
-  "FileHash": "{35F15E8B-60C0-C52C-B562-23CA91BC6116}"
+  "FileHash": "{786AD856-42A0-1FE0-65F6-D71DABFDFA8C}"
  }
 }
