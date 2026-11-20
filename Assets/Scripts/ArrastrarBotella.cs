@@ -3,30 +3,37 @@ using UnityEngine.InputSystem;
 
 public class ArrastrarBotella : MonoBehaviour
 {
-    private Vector3 screenPoint;
-    private Vector3 offset;
-    private float posInicialZ;
     private Rigidbody rb;
     private Quaternion rotacionInicial;
+    private float alturaMesa;
+    private float zInicial; 
+    private Vector3 offsetAgarre;
 
     private bool estaAgarrada = false;
-    private bool estaSirviendo = false; 
+    private bool estaSirviendo = false;
 
-    [Header("Configuración para servir")]
+    [Header("Límites de Movimiento")]
+    public float limiteProfundidadZ = 0.6f; 
+    public float suavidadMovimiento = 15f; 
+
+    [Header("Configuración del Imán (Smooth)")]
     public string tagCopas = "Copa";
-    public float distanciaParaServir = 2.5f;
-    public float anguloVolcadoMaximo = 180f;
-    public float velocidadRotacion = 6f;
+    public float distanciaParaServir = 0.8f;
+    public Vector3 offsetServido = new Vector3(0.3f, 0.4f, 0f);
+    public float suavidadIman = 5f; 
 
-    [Header("Líquido")]
+    [Header("Inclinación y Líquido")]
+    public float anguloVolcadoMaximo = 130f;
+    public float velocidadRotacion = 4f; 
+    public float anguloParaQueSalgaLiquido = 45f; 
+
     public ParticleSystem particulasLiquido;
-   
 
     void Start()
     {
-        posInicialZ = transform.position.z;
         rb = GetComponent<Rigidbody>();
         rotacionInicial = transform.rotation;
+        zInicial = transform.position.z; 
     }
 
     void OnMouseDown()
@@ -34,63 +41,73 @@ public class ArrastrarBotella : MonoBehaviour
         estaAgarrada = true;
         if (rb != null) rb.isKinematic = true;
 
-        Vector2 pointerPos = Pointer.current.position.ReadValue();
-        screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-        offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(pointerPos.x, pointerPos.y, screenPoint.z));
+        alturaMesa = transform.position.y;
+
+        Ray rayo = Camera.main.ScreenPointToRay(Pointer.current.position.ReadValue());
+        Plane planoMesa = new Plane(Vector3.up, new Vector3(0, alturaMesa, 0));
+        if (planoMesa.Raycast(rayo, out float distancia))
+        {
+            offsetAgarre = transform.position - rayo.GetPoint(distancia);
+        }
     }
 
     void OnMouseDrag()
     {
-        Vector2 pointerPos = Pointer.current.position.ReadValue();
-        Vector3 cursorPoint = new Vector3(pointerPos.x, pointerPos.y, screenPoint.z);
-        Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(cursorPoint) + offset;
+        Ray rayo = Camera.main.ScreenPointToRay(Pointer.current.position.ReadValue());
+        Plane planoMesa = new Plane(Vector3.up, new Vector3(0, alturaMesa, 0));
 
-        transform.position = new Vector3(cursorPosition.x, cursorPosition.y, posInicialZ);
-
-        GameObject copaObjetivo = BuscarCopaMasCercana();
-
-        if (copaObjetivo != null)
+        if (planoMesa.Raycast(rayo, out float distanciaAlPlano))
         {
-            float distancia = Vector3.Distance(transform.position, copaObjetivo.transform.position);
+            
+            Vector3 posicionDedo = rayo.GetPoint(distanciaAlPlano) + offsetAgarre;
+            posicionDedo.z = Mathf.Clamp(posicionDedo.z, zInicial - limiteProfundidadZ, zInicial + limiteProfundidadZ);
 
-            if (distancia < distanciaParaServir)
+            GameObject copaObjetivo = BuscarCopaMasCercana();
+
+            if (copaObjetivo != null)
             {
-                float difX = transform.position.x - copaObjetivo.transform.position.x;
-                float direccion = (difX > 0) ? 1f : -1f;
+                float distanciaAlVaso = Vector3.Distance(posicionDedo, copaObjetivo.transform.position);
 
-                float factorCentrado = 1f - Mathf.Clamp01(Mathf.Abs(difX) / distanciaParaServir);
-                float anguloObjetivo = Mathf.Lerp(0f, anguloVolcadoMaximo, factorCentrado);
-
-                Quaternion giroGlobal = Quaternion.AngleAxis(anguloObjetivo * direccion, Vector3.forward);
-                transform.rotation = Quaternion.Lerp(transform.rotation, giroGlobal * rotacionInicial, Time.deltaTime * velocidadRotacion);
-
-              
-                if (factorCentrado > 0.3f)
+                
+                if (distanciaAlVaso < distanciaParaServir)
                 {
-                    estaSirviendo = true;
+                    float lado = Mathf.Sign(posicionDedo.x - copaObjetivo.transform.position.x);
+                    Vector3 posicionIdeal = copaObjetivo.transform.position + new Vector3(offsetServido.x * lado, offsetServido.y, offsetServido.z);
+
+                    
+                    transform.position = Vector3.Lerp(transform.position, posicionIdeal, Time.deltaTime * suavidadIman);
+
+               
+                    float distanciaIdeal = Vector3.Distance(transform.position, posicionIdeal);
+                    float factorCentrado = 1f - Mathf.Clamp01(distanciaIdeal / distanciaParaServir);
+                    float anguloObjetivo = Mathf.Lerp(0f, anguloVolcadoMaximo, factorCentrado);
+
+                    Quaternion giroGlobal = Quaternion.AngleAxis(anguloObjetivo * lado, Vector3.forward);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, giroGlobal * rotacionInicial, Time.deltaTime * velocidadRotacion);
                 }
                 else
                 {
-                    estaSirviendo = false;
+                   
+                    transform.position = Vector3.Lerp(transform.position, posicionDedo, Time.deltaTime * suavidadMovimiento);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, rotacionInicial, Time.deltaTime * velocidadRotacion);
                 }
             }
             else
             {
+                transform.position = Vector3.Lerp(transform.position, posicionDedo, Time.deltaTime * suavidadMovimiento);
                 transform.rotation = Quaternion.Lerp(transform.rotation, rotacionInicial, Time.deltaTime * velocidadRotacion);
-                estaSirviendo = false;
             }
-        }
-        else
-        {
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotacionInicial, Time.deltaTime * velocidadRotacion);
-            estaSirviendo = false;
+
+            
+            float inclinacionFisicaActual = Quaternion.Angle(transform.rotation, rotacionInicial);
+            estaSirviendo = (inclinacionFisicaActual > anguloParaQueSalgaLiquido);
         }
     }
 
     void OnMouseUp()
     {
         estaAgarrada = false;
-        estaSirviendo = false; 
+        estaSirviendo = false;
         if (rb != null) rb.isKinematic = false;
         transform.rotation = rotacionInicial;
     }
@@ -99,7 +116,6 @@ public class ArrastrarBotella : MonoBehaviour
     {
         if (particulasLiquido != null)
         {
-            
             if (estaAgarrada && estaSirviendo)
             {
                 if (!particulasLiquido.isPlaying) particulasLiquido.Play();
@@ -126,7 +142,6 @@ public class ArrastrarBotella : MonoBehaviour
                 copaMasCercana = copa;
             }
         }
-
         return copaMasCercana;
     }
 }
