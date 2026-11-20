@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: AkWwiseInitializationSettings
   m_EditorClassIdentifier: AK.Wwise.Unity.API::AkWwiseInitializationSettings
   PlatformSettingsNameList:
+  - Android
   - Mac
   - Windows
   PlatformSettingsList:
+  - {fileID: 11400000, guid: a7dba103f6e4f794da68cde2f5b3c481, type: 2}
   - {fileID: 11400000, guid: 56f46efd49d324248a8d4e2ac24e509f, type: 2}
   - {fileID: 11400000, guid: 10526221e64864e4aa1b95c4b75e61c6, type: 2}
   InvalidReferencePlatforms: []
