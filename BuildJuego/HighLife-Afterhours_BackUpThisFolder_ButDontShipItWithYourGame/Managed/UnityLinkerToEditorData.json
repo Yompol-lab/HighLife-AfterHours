@@ -35,7 +35,8 @@
           {
             "name": "NavMeshSettings",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -239,7 +240,8 @@
           {
             "name": "Camera",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -253,7 +255,7 @@
           {
             "name": "ComputeShader",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -261,7 +263,8 @@
           {
             "name": "Cubemap",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -281,7 +284,8 @@
           {
             "name": "EditorExtension",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -295,7 +299,8 @@
           {
             "name": "GameObject",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -329,7 +334,8 @@
           {
             "name": "LevelGameManager",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -337,7 +343,8 @@
           {
             "name": "Light",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -363,7 +370,8 @@
           {
             "name": "LightmapSettings",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -377,7 +385,8 @@
           {
             "name": "Material",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -385,7 +394,8 @@
           {
             "name": "Mesh",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -393,7 +403,8 @@
           {
             "name": "MeshFilter",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -401,7 +412,8 @@
           {
             "name": "MeshRenderer",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -409,7 +421,8 @@
           {
             "name": "MonoBehaviour",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -423,7 +436,8 @@
           {
             "name": "MonoScript",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -431,7 +445,8 @@
           {
             "name": "NamedObject",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -469,7 +484,8 @@
           {
             "name": "RectTransform",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -483,7 +499,8 @@
           {
             "name": "RenderSettings",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -517,7 +534,8 @@
           {
             "name": "Shader",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -551,7 +569,8 @@
           {
             "name": "Sprite",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -833,6 +852,12 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.uielements"
+          },
+          {
+            "name": "Required by Umbra Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.umbra"
           },
           {
             "name": "Required by UnityAnalytics Module",
@@ -1575,6 +1600,12 @@
             "icon": "package/com.unity.modules.uielements"
           },
           {
+            "name": "Required by Umbra Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.umbra"
+          },
+          {
             "name": "Required by UnityAnalytics Module",
             "scenes": [],
             "dependencyType": 2,
@@ -1731,7 +1762,8 @@
           {
             "name": "Font",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1785,7 +1817,8 @@
           {
             "name": "Canvas",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1799,7 +1832,8 @@
           {
             "name": "CanvasRenderer",
             "scenes": [
-              "Assets/Scenes/Juego.unity"
+              "Assets/Scenes/Juego.unity",
+              "Assets/Scenes/Menu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1843,6 +1877,27 @@
             "name": "UIRenderer",
             "scenes": [],
             "dependencyType": 0,
+            "icon": null
+          }
+        ]
+      },
+      {
+        "name": "Umbra",
+        "dependencies": [
+          {
+            "name": "OcclusionCullingData",
+            "scenes": [
+              "Assets/Scenes/Juego.unity"
+            ],
+            "dependencyType": 1,
+            "icon": null
+          },
+          {
+            "name": "OcclusionCullingSettings",
+            "scenes": [
+              "Assets/Scenes/Juego.unity"
+            ],
+            "dependencyType": 1,
             "icon": null
           }
         ]
