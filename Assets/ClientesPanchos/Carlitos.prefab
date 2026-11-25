@@ -2662,6 +2662,7 @@ GameObject:
   - component: {fileID: 6735298415134057158}
   - component: {fileID: 266998847849439825}
   - component: {fileID: 6717657937220280462}
+  - component: {fileID: 1113478483954370313}
   m_Layer: 0
   m_Name: Carlitos
   m_TagString: Untagged
@@ -2818,6 +2819,29 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &1113478483954370313
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3348641785564449632}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 1, y: 1, z: 0}
 --- !u!1 &3402831952868605835
 GameObject:
   m_ObjectHideFlags: 0

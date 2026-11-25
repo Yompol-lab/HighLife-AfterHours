@@ -1,5 +1,8 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class InteraccionJugador : MonoBehaviour
 {
@@ -7,87 +10,210 @@ public class InteraccionJugador : MonoBehaviour
     public Camera camaraPrincipal;
     public Transform puntoDeMano;
     public float distanciaAgarre = 10f;
+    public float toleranciaToque = 0.12f;
+
+    [Header("Filtro Tap vs Movimiento de Cámara")]
+    public float distanciaMaximaTap = 30f; 
+    public float tiempoMaximoTap = 0.35f;  
 
     private VasoInteractuable vasoActual;
     private ItemPancheria comidaActual;
 
+    private struct DatosToque
+    {
+        public Vector2 posicionInicial;
+        public float tiempoInicio;
+        public bool empezoEnUI;
+    }
+
+    private readonly Dictionary<int, DatosToque> toquesActivos = new Dictionary<int, DatosToque>();
+    private readonly List<RaycastResult> resultadosUI = new List<RaycastResult>();
+    private DatosToque datosMouse;
+    private bool mouseActivo;
+
     void Update()
     {
-       
-        if (Input.GetMouseButtonDown(0))
+        if (Input.touchCount > 0)
         {
-            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject(ObtenerIDToque()))
-                return;
+            mouseActivo = false;
 
-            Ray rayo = camaraPrincipal.ScreenPointToRay(Input.mousePosition);
-            RaycastHit golpe;
-
-            if (Physics.Raycast(rayo, out golpe, distanciaAgarre))
+            foreach (Touch toque in Input.touches)
             {
-                VasoInteractuable vasoTocado = golpe.collider.GetComponent<VasoInteractuable>();
-                ItemPancheria comidaTocada = golpe.collider.GetComponent<ItemPancheria>();
-                GeneradorComida generador = golpe.collider.GetComponent<GeneradorComida>();
-                TablaPreparacion tablaPrepa = golpe.collider.GetComponent<TablaPreparacion>();
-                TablaEntregaPancheria tablaEntrega = golpe.collider.GetComponent<TablaEntregaPancheria>();
-
-              
-                if (vasoActual == null && comidaActual == null)
+                if (toque.phase == TouchPhase.Began)
                 {
-                    if (vasoTocado != null)
-                        AgarrarVaso(vasoTocado);
-                    else if (comidaTocada != null)
-                        AgarrarComida(comidaTocada);
-                    else if (generador != null)
-                        AgarrarComida(generador.GenerarItem());
-                    else if (tablaPrepa != null && tablaPrepa.TienePanchoListo())
-                        AgarrarComida(tablaPrepa.EntregarPanchoListo()); 
+                    toquesActivos[toque.fingerId] = new DatosToque
+                    {
+                        posicionInicial = toque.position,
+                        tiempoInicio = Time.time,
+                        empezoEnUI = EstaSobreUI(toque.position)
+                    };
                 }
-                
-                else if (comidaActual != null)
+                else if (toque.phase == TouchPhase.Ended)
                 {
-                    if (tablaPrepa != null)
+                    if (toquesActivos.TryGetValue(toque.fingerId, out DatosToque datos))
                     {
-                        
-                        if (tablaPrepa.RecibirIngrediente(comidaActual))
-                        {
-                            Destroy(comidaActual.gameObject);
-                            comidaActual = null;
-                        }
+                        toquesActivos.Remove(toque.fingerId);
+                        ValidarYProcesarTap(datos, toque.position);
                     }
-                    else if (tablaEntrega != null)
+                }
+                else if (toque.phase == TouchPhase.Canceled)
+                {
+                    toquesActivos.Remove(toque.fingerId);
+                }
+            }
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                mouseActivo = true;
+                datosMouse = new DatosToque
+                {
+                    posicionInicial = Input.mousePosition,
+                    tiempoInicio = Time.time,
+                    empezoEnUI = EstaSobreUI(Input.mousePosition)
+                };
+            }
+            else if (Input.GetMouseButtonUp(0) && mouseActivo)
+            {
+                mouseActivo = false;
+                ValidarYProcesarTap(datosMouse, Input.mousePosition);
+            }
+        }
+    }
+
+    private void ValidarYProcesarTap(DatosToque datos, Vector2 posicionFinal)
+    {
+        if (datos.empezoEnUI || EstaSobreUI(posicionFinal)) return;
+
+        float distancia = Vector2.Distance(datos.posicionInicial, posicionFinal);
+        float duracion = Time.time - datos.tiempoInicio;
+
+        if (distancia <= distanciaMaximaTap && duracion <= tiempoMaximoTap)
+        {
+            ProcesarToque(posicionFinal);
+        }
+    }
+
+    private void ProcesarToque(Vector2 posicionPantalla)
+    {
+        if (camaraPrincipal == null || !camaraPrincipal.gameObject.activeInHierarchy) return;
+
+        Ray rayo = camaraPrincipal.ScreenPointToRay(posicionPantalla);
+
+        RaycastHit[] golpes = Physics.RaycastAll(rayo, distanciaAgarre, ~0, QueryTriggerInteraction.Ignore);
+        if (IntentarInteractuar(golpes)) return;
+
+        RaycastHit[] golpesAmplios = Physics.SphereCastAll(rayo, toleranciaToque, distanciaAgarre, ~0, QueryTriggerInteraction.Ignore);
+        if (IntentarInteractuar(golpesAmplios)) return;
+
+        IntentarSoltarEnSuperficie(golpes);
+    }
+
+    private bool IntentarInteractuar(RaycastHit[] golpes)
+    {
+        if (golpes.Length == 0) return false;
+
+        Array.Sort(golpes, (a, b) => a.distance.CompareTo(b.distance));
+
+        foreach (RaycastHit golpe in golpes)
+        {
+            if (golpe.transform.IsChildOf(transform)) continue;
+
+            if (vasoActual == null && comidaActual == null)
+            {
+                VasoInteractuable vasoTocado = golpe.collider.GetComponentInParent<VasoInteractuable>();
+                ItemPancheria comidaTocada = golpe.collider.GetComponentInParent<ItemPancheria>();
+                GeneradorComida generador = golpe.collider.GetComponentInParent<GeneradorComida>();
+                TablaPreparacion tablaPrepa = golpe.collider.GetComponentInParent<TablaPreparacion>();
+
+                if (vasoTocado != null)
+                {
+                    AgarrarVaso(vasoTocado);
+                    return true;
+                }
+                if (comidaTocada != null)
+                {
+                    AgarrarComida(comidaTocada);
+                    return true;
+                }
+                if (generador != null)
+                {
+                    ItemPancheria nuevo = generador.GenerarItem();
+                    if (nuevo != null) AgarrarComida(nuevo);
+                    return true;
+                }
+                if (tablaPrepa != null && tablaPrepa.TienePanchoListo())
+                {
+                    ItemPancheria pancho = tablaPrepa.EntregarPanchoListo();
+                    if (pancho != null) AgarrarComida(pancho);
+                    return true;
+                }
+            }
+            else if (comidaActual != null)
+            {
+                TablaPreparacion tablaPrepa = golpe.collider.GetComponentInParent<TablaPreparacion>();
+                TablaEntregaPancheria tablaEntrega = golpe.collider.GetComponentInParent<TablaEntregaPancheria>();
+
+                if (tablaPrepa != null)
+                {
+                    if (tablaPrepa.RecibirIngrediente(comidaActual))
                     {
-                       
-                        tablaEntrega.ProcesarEntrega(comidaActual);
+                        Destroy(comidaActual.gameObject);
                         comidaActual = null;
                     }
-                    else
-                    {
-                        
-                        comidaActual.DejarEnMesa(golpe.point);
-                        comidaActual = null;
-                    }
+                    return true;
                 }
-              
-                else if (vasoActual != null)
+                if (tablaEntrega != null)
                 {
-                    ZonaPreparado zonaBolichePrep = golpe.collider.GetComponent<ZonaPreparado>();
-                    ZonaEntrega zonaBolicheEntr = golpe.collider.GetComponent<ZonaEntrega>();
-
-                    if (zonaBolichePrep != null)
-                    {
-                        zonaBolichePrep.RecibirVaso(vasoActual);
-                        vasoActual = null;
-                    }
-                    else if (zonaBolicheEntr != null)
-                    {
-                        zonaBolicheEntr.RecibirVaso(vasoActual);
-                        vasoActual = null;
-                    }
-                    else
-                    {
-                        SoltarVaso();
-                    }
+                    tablaEntrega.ProcesarEntrega(comidaActual);
+                    comidaActual = null;
+                    return true;
                 }
+            }
+            else if (vasoActual != null)
+            {
+                ZonaPreparado zonaBolichePrep = golpe.collider.GetComponentInParent<ZonaPreparado>();
+                ZonaEntrega zonaBolicheEntr = golpe.collider.GetComponentInParent<ZonaEntrega>();
+
+                if (zonaBolichePrep != null)
+                {
+                    zonaBolichePrep.RecibirVaso(vasoActual);
+                    vasoActual = null;
+                    return true;
+                }
+                if (zonaBolicheEntr != null)
+                {
+                    zonaBolicheEntr.RecibirVaso(vasoActual);
+                    vasoActual = null;
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    private void IntentarSoltarEnSuperficie(RaycastHit[] golpes)
+    {
+        if (comidaActual == null && vasoActual == null) return;
+
+        Array.Sort(golpes, (a, b) => a.distance.CompareTo(b.distance));
+
+        foreach (RaycastHit golpe in golpes)
+        {
+            if (golpe.transform.IsChildOf(transform)) continue;
+
+            if (comidaActual != null)
+            {
+                comidaActual.DejarEnMesa(golpe.point);
+                comidaActual = null;
+                return;
+            }
+            if (vasoActual != null)
+            {
+                SoltarVaso();
+                return;
             }
         }
     }
@@ -114,13 +240,27 @@ public class InteraccionJugador : MonoBehaviour
         vasoActual = null;
     }
 
-    private int ObtenerIDToque()
+    private bool EstaSobreUI(Vector2 posicionPantalla)
     {
-#if UNITY_EDITOR || UNITY_STANDALONE
-        return -1;
-#else
-            if (Input.touchCount > 0) return Input.GetTouch(0).fingerId;
-            return -1;
-#endif
+        if (EventSystem.current == null) return false;
+
+        PointerEventData evento = new PointerEventData(EventSystem.current)
+        {
+            position = posicionPantalla
+        };
+        resultadosUI.Clear();
+        EventSystem.current.RaycastAll(evento, resultadosUI);
+
+        foreach (RaycastResult r in resultadosUI)
+        {
+            if (r.gameObject.GetComponentInParent<Selectable>() != null ||
+                r.gameObject.GetComponentInParent<IDragHandler>() != null)
+            {
+                Debug.Log("Bloqueado por UI: " + r.gameObject.name);
+                return true;
+            }
+        }
+
+        return false;
     }
 }

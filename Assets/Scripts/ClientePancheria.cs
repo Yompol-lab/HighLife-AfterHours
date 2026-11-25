@@ -119,7 +119,7 @@ public class ClientePancheria : MonoBehaviour
         }
     }
 
-    public void EntregarComida(string nombreComidaEntregada)
+    public bool EntregarComida(string nombreComidaEntregada)
     {
         if (estadoActual == EstadoNPC.EsperandoPedido)
         {
@@ -140,8 +140,11 @@ public class ClientePancheria : MonoBehaviour
                 {
                     TerminarYSalir();
                 }
+
+                return true;
             }
         }
+        return false;
     }
 
     private void TerminarYSalir()

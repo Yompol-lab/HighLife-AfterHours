@@ -2,22 +2,37 @@ using UnityEngine;
 
 public class ItemPancheria : MonoBehaviour
 {
-    public string nombrePedido = "Pan"; 
+    public string nombrePedido = "Pan";
 
-   
-    public void BloquearEnMano(Transform puntoMano)
+    [Header("Ajuste visual en la mano")]
+    public Vector3 posicionEnMano = Vector3.zero;
+    public Vector3 rotacionEnMano = Vector3.zero;
+    public float escalaEnMano = 1f; 
+
+    private Vector3 escalaOriginal;
+
+    void Awake()
     {
-        transform.SetParent(puntoMano);
-        transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.identity;
+        escalaOriginal = transform.localScale;
     }
 
-   
+    public void BloquearEnMano(Transform puntoMano)
+    {
+        if (TryGetComponent(out Collider col)) col.enabled = false;
+
+        transform.SetParent(puntoMano, false);
+        transform.localPosition = posicionEnMano;
+        transform.localRotation = Quaternion.Euler(rotacionEnMano);
+        transform.localScale = escalaOriginal * escalaEnMano;
+    }
+
     public void DejarEnMesa(Vector3 puntoDestino)
     {
+        if (TryGetComponent(out Collider col)) col.enabled = true;
+
         transform.SetParent(null);
         transform.position = puntoDestino;
-        
-        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+        transform.rotation = Quaternion.Euler(rotacionEnMano);
+        transform.localScale = escalaOriginal;
     }
 }

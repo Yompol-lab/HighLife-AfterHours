@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 8528124814977070420}
   - component: {fileID: 2169939946094295672}
   - component: {fileID: 4358717780425218209}
+  - component: {fileID: -4046929031374079215}
   m_Layer: 0
   m_Name: MediaLuna
   m_TagString: Untagged
@@ -180,14 +181,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6621328133070144858}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.39346814, y: 0.7496089, z: 0.43657827, w: 0.3044155}
-  m_LocalPosition: {x: -2.2774506, y: -0.482, z: -4.9720645}
+  m_LocalRotation: {x: 0.06584083, y: 0.753814, z: -0.42927665, w: 0.49310336}
+  m_LocalPosition: {x: -2.6575084, y: 0.52789277, z: -5.1412735}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2985251998552732364}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -63.391, y: 165.41, z: -46.35}
+  m_LocalEulerAnglesHint: {x: 45.408, y: 101.931, z: -27.493}
 --- !u!65 &2169939946094295672
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -221,7 +222,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 659505b83610a1a49aaf5029245f956b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPancheria
-  nombrePedido: Medialuna
+  nombrePedido: MedialunaPNG
+--- !u!114 &-4046929031374079215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6621328133070144858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc64be12d7252c4f8ead6c368988275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrecioObjeto
+  precio: 500
 --- !u!1 &8119649095300416543
 GameObject:
   m_ObjectHideFlags: 0

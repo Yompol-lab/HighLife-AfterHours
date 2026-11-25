@@ -20,6 +20,12 @@ public class ZonaEntrega : MonoBehaviour
             ComportamientoNPC npc = obj.GetComponent<ComportamientoNPC>();
             if (npc != null && npc.estadoActual == ComportamientoNPC.EstadoNPC.EsperandoTrago)
             {
+                PrecioObjeto producto = vasoEntregado.GetComponent<PrecioObjeto>();
+                if (producto != null && DineroManager.Instance != null)
+                {
+                    DineroManager.Instance.SumarDinero(producto.precio);
+                }
+
                 npc.RecibirTrago();
                 Destroy(vasoEntregado.gameObject);
                 return;
